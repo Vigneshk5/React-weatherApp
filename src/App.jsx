@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
+import { Dimmer, Loader } from "semantic-ui-react";
 import Weather from "./components/weather";
 export default function App() {
   const [lat, setLat] = useState([]);
@@ -12,6 +13,11 @@ export default function App() {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
       });
+      useEffect(() => {
+        window.process = {
+          ...window.process,
+        };
+      }, []);
 
       await fetch(
         `${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`
@@ -22,6 +28,7 @@ export default function App() {
           console.log(result);
         });
     };
+
     fetchData();
   }, [lat, long]);
 
@@ -30,7 +37,11 @@ export default function App() {
       {typeof data.main != "undefined" ? (
         <Weather weatherData={data} />
       ) : (
-        <div></div>
+        <div>
+          <Dimmer active>
+            <Loader>Loading..</Loader>
+          </Dimmer>
+        </div>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
 # React-weatherApp
-open weather api
-semantic-ui-css
-momentjs
+
+open weather api:https://openweathermap.org/api
+momentjs:https://momentjs.com/
