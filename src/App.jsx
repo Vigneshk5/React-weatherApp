@@ -13,14 +13,9 @@ export default function App() {
         setLat(position.coords.latitude);
         setLong(position.coords.longitude);
       });
-      useEffect(() => {
-        window.process = {
-          ...window.process,
-        };
-      }, []);
 
       await fetch(
-        `${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`
+        `${`https://api.openweathermap.org/data/2.5`}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${`fbee9442cb80c62971301f2d0af53c97`}`
       )
         .then((res) => res.json())
         .then((result) => {
