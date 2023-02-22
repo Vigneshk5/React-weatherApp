@@ -10,6 +10,7 @@ const refresh = () => {
 const WeatherCard = ({ weatherData }) => (
   <div className="main">
     <div className="top">
+      {" "}
       <p className="header">{weatherData.name}</p>
       <Button
         className="button"
