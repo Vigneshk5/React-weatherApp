@@ -3,7 +3,12 @@
 .main {
   width: 80%;
   border-radius: 20px;
-  background-color: #01579b;
+  background: linear-gradient(
+    90deg,
+    rgb(255, 15, 123) 0%,
+    hsla(33, 94%, 57%, 1) 100%
+  );
+  box-shadow: 5px 5px 4px 5px rgb(62, 62, 62);
 }
 
 .top {
@@ -18,7 +23,7 @@
 }
 
 .header {
-  background-color: #424242;
+  background-color: #d96c00;
   color: whitesmoke;
   margin: 10px 0px 0px 10px;
   font-size: 25px;

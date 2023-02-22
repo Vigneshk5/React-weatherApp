@@ -14,7 +14,7 @@ const WeatherCard = ({ weatherData }) => (
       <Button
         className="button"
         inverted
-        color="blue"
+        color="orange"
         circular
         icon="refresh"
         onClick={refresh}
